@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_superuser %}
+<h3>Delete : {{ post.title }} </h3>
+<form method="POST">
+{% csrf_token %}
+<strong>Are you sure ....</strong>
+<button class="btn btn-secondary">Delete Post</button>
+</form>
+{% else %}
+<H3> You Can't Delete this post </h3>
+{% endif %}
+
+
+
+{% endblock content %}

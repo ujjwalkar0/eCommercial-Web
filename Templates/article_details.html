@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+
+{% block title %} {{post.title}} | CSEKod.tech {% endblock %}
+
+{% block content %}
+
+<h2>{{ post.title }}</h2>
+<hr>
+<!-- <img class="card-img-top" src="/media/{{post.image}}" alt="Card image cap"> -->
+
+
+<style>
+
+@media (min-width: 750px) {
+  .desktop{
+    margin-left: 25%;
+  }
+
+}
+</style>
+
+<!--------------------------------------------------------------------------->
+
+<div class="container my-4">
+  
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="false">
+  
+      <!--Controls-->
+      <div class="controls-top">
+        <a class="btn btn-floating" style="float: left;" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left">Prev</i></a>
+        <a class="btn btn-floating" style="float: right;" href="#multi-item-example" data-slide="next"><b>Next</b><i class="fas fa-chevron-right"></i></a>
+      </div>
+      <!--/.Controls-->
+  
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+        <li data-target="#multi-item-example" data-slide-to="1"></li>
+        <li data-target="#multi-item-example" data-slide-to="2"></li>
+        <li data-target="#multi-item-example" data-slide-to="3"></li>
+        <li data-target="#multi-item-example" data-slide-to="4"></li>
+        <li data-target="#multi-item-example" data-slide-to="5"></li>
+        <li data-target="#multi-item-example" data-slide-to="6"></li>
+      </ol>
+      <!--/.Indicators-->
+  
+      <!--Slides-->
+      <div class="carousel-inner container desktop" role="listbox">
+   
+        <!--First slide-->
+        <div class="carousel-item active">
+            <div class="col-md-6">
+              <div class="card mb-2">
+                <object data="/media/unav.png" type="image/png">
+                  <img class="card-img-top"
+                  src="/media/{{post.image}}"
+                  alt="Card image cap">
+              </object>
+              </div>
+            </div>
+          </div>
+          <!--/.First slide-->
+          
+        <!--First slide-->
+        <div class="carousel-item">
+            <div class="col-md-6">
+              <div class="card mb-2">
+                <object data="/media/unav.png" type="image/png">
+                  <img class="card-img-top"
+                  src="/media/{{post.image2}}"
+                  alt="Card image cap">
+              </object>
+              </div>
+            </div>
+          </div>
+          <!--/.First slide-->
+          
+        <!--First slide-->
+        <div class="carousel-item">
+            <div class="col-md-6">
+              <div class="card mb-2">
+                <object data="/media/unav.png" type="image/png">
+                  <img class="card-img-top"
+                  src="/media/{{post.image3}}"
+                  alt="Card image cap">
+              </object>
+              </div>
+            </div>
+          </div>
+          <!--/.First slide-->
+          
+        <!--First slide-->
+        <div class="carousel-item">
+            <div class="col-md-6">
+              <div class="card mb-2">
+                <object data="/media/unav.png" type="image/png">
+                  <img class="card-img-top"
+                  src="/media/{{post.image4}}"
+                  alt="Card image cap">
+              </object>
+              </div>
+            </div>
+          </div>
+          <!--/.First slide-->
+          
+        <!--First slide-->
+        <div class="carousel-item">
+            <div class="col-md-6">
+              <div class="card mb-2">
+                <object data="/media/unav.png" type="image/png">
+                  <img class="card-img-top"
+                  src="/media/{{post.image5}}"
+                  alt="Card image cap">
+              </object>
+              </div>
+            </div>
+          </div>
+          <!--/.First slide-->
+          
+        <!--First slide-->
+        <div class="carousel-item">
+            <div class="col-md-6">
+              <div class="card mb-2">
+                <object data="/media/unav.png" type="image/png">
+                  <img class="card-img-top"
+                  src="/media/{{post.image6}}"
+                  alt="Card image cap">
+              </object>
+              </div>
+            </div>
+          </div>
+          <!--/.First slide-->
+
+
+      </div>
+      <!--/.Slides-->
+  
+    </div>
+    <!--/.Carousel Wrapper-->
+  
+  </div>
+
+
+
+<!--------------------------------------------------------------------------->
+
+
+
+
+
+<h3>Description : </h3>
+
+{{ post.body|safe }} 
+
+<!-- <input type="text" name="product_id" required>
+<input type="text" name="customer_id" required> -->
+
+
+<!-- <form method="POST">
+  {% csrf_token %}
+  {{ form.as_p}}
+<button class="btn btn-secondary">Submit</button>
+</form> -->
+
+
+<div class = "container text-center">
+<form action="/order" method="POST" id="buy">
+  {% csrf_token %}
+  <div>
+    <button type = "submit" name="system" value={{post.id}} form="buy" class="w3-orange btn">Buy</button>
+  </div>
+</form>
+</div>
+
+
+
+
+<br /><br/>
+<a href="{% url "home" %}"><button type="button" class="btn btn-secondary">Back</button></a>
+
+{% endblock content %}

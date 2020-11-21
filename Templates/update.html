@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Update Post... </h1>
+{% if user.is_superuser %}
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p}}
+<button class="btn btn-secondary">Update</button>
+</form>
+{% else %}
+<H3> You Can't edit this post </h3>
+{% endif %}
+
+
+{% endblock content %}

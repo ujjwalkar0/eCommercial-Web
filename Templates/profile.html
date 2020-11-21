@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} CSEKod.tech {% endblock %}
+
+{% block content %}
+
+<!-- Card -->
+<div class="card testimonial-card">
+
+    <!-- Background color -->
+    <div class="card-up lighten-1" style="background-color: aqua; height: 100px;">
+      </div>
+  
+    <!-- Avatar -->
+    {% if profile.image == '' %}
+    <div class="avatar mx-auto white" style="margin-top: -20px;">
+      <img src="/media/index.png" class="rounded-circle"
+        alt="profile picture not load or not uploaded">
+    </div>
+      {% else %}
+    <div class="avatar mx-auto white" style="margin-top: -20px;">
+      <img src="/media/{{ profile.image }}" class="rounded-circle w3-green"
+        alt="profile picture not load or not uploaded">
+    </div>
+    {% endif %}
+
+    <!-- Content -->
+    <div class="card-body">
+      <!-- Name -->
+      <h4 class="w3-center card-title"><b>{{ profile.first_name }} {{ profile.last_name }}</b></h4>
+      {% if profile.username == user.get_username %}
+      <a href="/edit_profile" class="btn w3-green" style="float: right; width: 200px; margin-top: -40px;">Edit Profile</a>
+      {% endif %}
+      <hr>
+      <!-- Quotation -->
+      <p><i class="fas fa-quote-left"></i> {{ profile.bio }}
+      </p>
+      <hr>
+      <p> <b> Address :- </b> {{ profile.address }} </p>
+      <hr>
+      <p> <b>Mobile No. :- </b> {{ profile.mobile_no }} </p>
+      <p> <b>Website Url. :- </b> {{ profile.website_url }} </p>
+      <p> <b>Facebook Url. :- </b> {{ profile.facebook_url }} </p>
+      <p> <b>Twitter Url. :- </b> {{ profile.twitter_url }} </p>
+      <p> <b>Linkdin Url. :- </b> {{ profile.linkdin_url }} </p>
+    </div>
+  
+  </div>
+  <!-- Card -->
+
+{% endblock content %}
