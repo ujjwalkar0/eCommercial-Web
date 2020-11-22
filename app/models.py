@@ -23,7 +23,7 @@ class Catagories(models.Model):
 
 class Profile(User):
     image = models.ImageField(null=True,blank=True, upload_to="profile/")
-    bio = models.TextField(max_length=255,null=True)
+    bio = models.TextField(max_length=255,null=True,blank=True)
     address = models.CharField(max_length=255,null=True,blank=True,)
     mobile_no = models.CharField(max_length=10,null=True,blank=True,)
     website_url = models.CharField(max_length=255,null=True,blank=True,)
