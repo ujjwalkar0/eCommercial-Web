@@ -37,7 +37,6 @@ class Profile(User):
     twitter_url = models.CharField(max_length=255,null=True,blank=True,)
     linkdin_url = models.CharField(max_length=255,null=True,blank=True,)
 
-    
 class Post(models.Model):
     title = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE,null=True, blank=True)
