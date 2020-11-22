@@ -138,12 +138,4 @@
 </div>
 {% endfor %}
 </div>
-
-{% if page_obj.has_previous %}
-<a href="?page={{page_obj.previous_page_number}}"><button class="w3-btn w3-yellow" style="float: left;">Previous Page</button></a>
-{% endif %}
-{% if page_obj.has_next %}
-<a href="?page={{page_obj.next_page_number}}"><button class="w3-btn w3-cyan" style="float: right;">Next Page</button></a>
-{% endif %}
-
 {% endblock my_content %}

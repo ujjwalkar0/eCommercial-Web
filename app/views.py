@@ -51,6 +51,7 @@ class HomeView(ListView):
     template_name = "home.html"
     cats = Catagories.objects.all()
     ordering = ['-id']
+    paginate_by = 15
 
     def get_context_data(self,*args, **kwargs):
         cat_menu = Catagories.objects.all()
@@ -131,3 +132,8 @@ def Orderview(request):
 def order_successful(request):
     return render(request,'order_recieved.html',{})
     
+def search(request):
+    query = request.GET['query']
+    object_list = Post.objects.filter(title__icontains=query)
+    params = {'object_list':object_list}
+    return render(request,"search.html",params)

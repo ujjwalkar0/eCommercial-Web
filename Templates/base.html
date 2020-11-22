@@ -29,48 +29,33 @@
   </title>
   </head>
   <body>
-{% comment %} <img src="{{ 'static/image/img.png' }}"alt="Avatar" style="width:150px;display: block;
-  margin-left: auto;
-  margin-right: auto;
-  "> {% endcomment %}
 
-{% comment %} <nav class="mb-1 navbar navbar-expand-lg navbar-dark elegant-color-dark lighten-1">
-  <a class="navbar-brand" href="/">Electronics Store</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent-5555"> {% endcomment %}
 
 <nav class="mb-1 navbar navbar-expand-md bg-dark fixed-top navbar-dark">
-  <a class="navbar-brand" href="/">Electronics Store</a>
+  <a style="margin-left: 100px;" class="navbar-brand" href="/">Electronics Store</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
 
+<style>
+@media (min-width: 100px) {
+    #desktop{
+      width: 650px
+    }
+    }
+</style>
 
-    {% comment %} 
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'add_post' %}">Add Post </a>
-      </li>
-      {% if user.is_authenticated %}
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-      </li>
-      {% else %}
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'login' %}">Login</a>
-      </li>
-          <a class="nav-link" href="{% url 'register' %}">Register</a>
-      </li>
-      {% endif %}
-    </ul> {% endcomment %}
+<form method="get" action="/search" class="form-inline">
+  <input class="form-control mr-sm-2" id="desktop" type="search" placeholder="Search" aria-label="Search" name="query" id="search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+
 
       <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
         <a class="nav-link" href="/">Home
-          <span class="sr-only">(current)</span>
         </a>
       </li>
       {% if user.is_superuser %}
@@ -91,7 +76,7 @@
       <li class="nav-item avatar dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0" style="width:35px"
+          <img src="/media/index.png" class="rounded-circle z-depth-0" style="width:35px"
             alt="avatar image">
         </a>
         <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
@@ -103,7 +88,6 @@
             <a class="dropdown-item" href="/add_items">Add an Item</a>
             <a class="dropdown-item" href="/upload-csv">Add many Items as a csv file</a>
             <a class="dropdown-item" href="/catagory">Add an Catagory</a>
-            <a class="dropdown-item" href="/header/1">Edit header</a>
     
           {% endif %}
           <a class="dropdown-item" href="/members/logout/">Logout</a>
@@ -116,10 +100,6 @@
       </li>
     {% endif %}
 
-  {% comment %} <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form> {% endcomment %}
 
   </div>
 </nav>
@@ -142,6 +122,53 @@ style="margin-top: 75px; margin-bottom: 75px;"></nav>
 
 {% endblock my_content %}
 
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small special-color-dark pt-4">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-1">
+          <i class="fab fa-google-plus-g"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-dribbble mx-1">
+          <i class="fab fa-dribbble"> </i>
+        </a>
+      </li>
+    </ul>
+    <!-- Social buttons -->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3"> Made By, Ujjwal Kar, CSE Second Year
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 <!-- <footer>
   <nav class="btn float-right"></nav>
 </footer> -->
