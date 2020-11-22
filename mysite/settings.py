@@ -28,8 +28,8 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-DEBUG = TEMPLATE_DEBUG = False
+DEBUG = True
+DEBUG = TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = ['0.0.0.0','localhost','127.0.0.1','hackitonujjwal.herokuapp.com']
 
 # Application definition
