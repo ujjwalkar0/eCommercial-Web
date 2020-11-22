@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DeleteView, UpdateView, DetailView, CreateView
 from .models import Post,Catagories,Profile,order
-from .forms import PostForm, EditForm, UserEditForm,SignUpForm,Orders,OrderForm
+from .forms import PostForm, EditForm, UserEditForm,SignUpForm,Orders,OrderForm,catag
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 import csv, io

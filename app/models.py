@@ -4,12 +4,6 @@ from django.urls import reverse
 from datetime import datetime, date
 from ckeditor.fields import RichTextField
 
-# class layout(models.Model):
-#     img1=models.ImageField(upload_to="layout",null=True, blank=True)
-#     img2=models.ImageField(upload_to="layout",null=True, blank=True)
-#     img3=models.ImageField(upload_to="layout",null=True, blank=True)
-#     def get_absolute_url(self):
-#         return reverse('home')
 
 class order(models.Model):
     product_id = models.IntegerField(null=True)

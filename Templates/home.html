@@ -76,7 +76,19 @@
     </a>
   </div>
 
-  
+  <!---------------------------------------------------->
+
+  <div class="w3-bar w3-light-grey">
+    <a class="w3-bar-item w3-button">Catagory : </a>
+    {% for post in cat_menu.all %}
+    <a href="/catagory/{{post}}" class="w3-bar-item w3-button">{{post}}</a>
+    {% endfor %}
+  </div>
+<!-- 
+    <form method="POST">
+      {{ form.as_p}}
+      </form>
+       -->
   <!-------------------------------------------------------------->
 <div id="product"
   class="container"
